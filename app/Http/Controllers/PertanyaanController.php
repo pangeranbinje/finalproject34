@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Pertanyaan;
+
 use Illuminate\Http\Request;
 
 class PertanyaanController extends Controller
@@ -13,7 +15,8 @@ class PertanyaanController extends Controller
      */
     public function index()
     {
-        return view('layouts.index');
+        $post = Pertanyaan::all();
+        return view('layouts.index', compact('post'));
     }
 
     /**
@@ -34,7 +37,8 @@ class PertanyaanController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Pertanyaan::create($request->all());
+        return redirect('/index');
     }
 
     /**

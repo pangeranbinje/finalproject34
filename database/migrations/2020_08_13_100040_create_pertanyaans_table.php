@@ -19,11 +19,8 @@ class CreatePertanyaansTable extends Migration
             $table->longtext('isi');
             $table->timestamps();
 
-            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('user_id')->nullable();
             $table->foreign('user_id')->references('id')->on('users')->onDELETE('cascade');
-            
-
-            
         });
     }
 

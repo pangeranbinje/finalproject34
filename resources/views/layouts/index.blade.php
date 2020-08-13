@@ -1,10 +1,14 @@
 @extends('layouts.master')
 
 @section('content')
-<a href="/create" class="btn btn-primary btn-icon-split ">
+
+
+<a href="/index/create" class="btn btn-primary btn-icon-split ">
   <span class="text">Create Your Question</span>
 </a>
 <br><br>
+
+@foreach ($post as $pst)
 
 <div class="card shadow mb-4">
   <!-- Card Header - Dropdown -->
@@ -12,7 +16,7 @@
     <a href="#" class="btn btn-success btn-circle btn-sm">
       <i class="fas fa-check"></i>
     </a>
-    <h6 class="m-0 font-weight-bold text-grey">Diisi dengan Judul</h6>
+    <h6 class="m-0 font-weight-bold text-grey">{{ $pst->judul }}</h6>
     <div class="dropdown no-arrow">
       <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <i class="fas fa-ellipsis-v fa-sm fa-fw text-grey-400"></i>
@@ -26,10 +30,11 @@
   </div>
   <!-- Card Body -->
   <div class="card-body">
-    Diisi Dengan Pertanyaan
+    {{ $pst->isi }}
   </div>
   <div class="card-body">
-    Diisi dengan jawaban
+    Belom Ada Jawaban
   </div>
 </div>
+@endforeach
 @endsection

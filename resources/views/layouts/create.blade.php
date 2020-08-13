@@ -20,20 +20,20 @@
                   <div class="text-center">
                     <h1 class="h4 text-gray-900 mb-4">Insert Your Question</h1>
                   </div>
-                  <form class="user">
+
+                  <form class="user" method="POST" action="/index/create">
+                   @csrf
                     <div class="form-group">
-                      <input type="text" class="form-control form-control-user" id="judul" placeholder="Masukkan Judul">
+                      <input type="text" class="form-control form-control-user" name="judul" value="" id="judul" placeholder="Masukkan Judul" autocomplete="off">
                     </div>
                     <div class="form-group">
-                      <input type="text" class="form-control form-control-user" id="pertanyaan" placeholder="Masukkan Pertanyaan">
+                      <input type="text" class="form-control form-control-user" name="isi" value="" id="isi" placeholder="Masukkan Pertanyaan" autocomplete="off">
                     </div>
-                    <a href="#" class="btn btn-primary btn-user btn-block">
+                    <button class="btn btn-primary btn-user btn-block">
                       Submit
-                    </a>
-                    <a href="/" class="btn btn-primary btn-user btn-block">
-                      Cancel
-                    </a>
+                    </button>
                   </form>
+
                 </div>
               </div>
             </div>
