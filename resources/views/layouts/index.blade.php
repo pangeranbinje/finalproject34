@@ -22,7 +22,8 @@
         <i class="fas fa-ellipsis-v fa-sm fa-fw text-grey-400"></i>
       </a>
       <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink" style="">
-        <a class="dropdown-item" href="#">Vote(Autentikasi)</a>
+        <a class="dropdown-item" href="#">UpVote(Autentikasi)</a>
+        <a class="dropdown-item" href="#">DownVote(Autentikasi)</a>
         <a class="dropdown-item" href="#">Jawaban(Autentikasi)</a>
         <a class="dropdown-item" href="#">Komentar(Autentikasi)</a>
       </div>
@@ -35,6 +36,7 @@
   <div class="card-body">
     Belom Ada Jawaban
   </div>
+  <span class="badge badge-info">{{ $pst->created_at }}</span>
 </div>
 @endforeach
 @endsection
