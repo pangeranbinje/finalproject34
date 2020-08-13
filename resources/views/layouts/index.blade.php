@@ -1,6 +1,11 @@
 @extends('layouts.master')
 
 @section('content')
+<a href="/create" class="btn btn-primary btn-icon-split ">
+  <span class="text">Create Your Question</span>
+</a>
+<br><br>
+
 <div class="card shadow mb-4">
   <!-- Card Header - Dropdown -->
   <div class="m-0 card-header py-3 d-flex flex-row align-items-center justify-content-between">
