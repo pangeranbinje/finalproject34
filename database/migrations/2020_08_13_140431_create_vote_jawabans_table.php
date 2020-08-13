@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePertanyaansTable extends Migration
+class CreateVoteJawabansTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,17 +13,15 @@ class CreatePertanyaansTable extends Migration
      */
     public function up()
     {
-        Schema::create('pertanyaans', function (Blueprint $table) {
+        Schema::create('vote_jawabans', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('judul');
-            $table->longtext('isi');
-            $table->timestamps();
+            $table->integer('vote');
 
+            $table->unsignedBigInteger('jawaban_id');
+            $table->foreign('jawaban_id')->references('id')->on('jawabans')->onDELETE('cascade');
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDELETE('cascade');
-            
-
-            
+            $table->timestamps();
         });
     }
 
@@ -34,6 +32,6 @@ class CreatePertanyaansTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pertanyaans');
+        Schema::dropIfExists('vote_jawabans');
     }
 }

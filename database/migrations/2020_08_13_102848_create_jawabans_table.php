@@ -16,12 +16,11 @@ class CreateJawabansTable extends Migration
         Schema::create('jawabans', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('jawaban');
-            $table->datetime('tanggal_dibuat');
-            $table->datetime('tanggal_diperbaharui');
+            $table->timestamps();
             
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDELETE('cascade');
-            $table->timestamps();
+            
         });
     }
 
