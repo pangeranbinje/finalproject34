@@ -33,11 +33,7 @@
                     <div class="form-group">
                     <label for="isi"></label>
                       <textarea name="isi" class="form-control my-editor" placeholder="Masukkan Pertanyaan">{!! old('content', $content ?? '') !!}</textarea>
-                    </div>     
-                    
-                    <button class="btn btn-primary btn-user btn-block mt-2">
-                      Submit
-                    </button>
+                    </div> 
                   </form>
 
                 </div>
