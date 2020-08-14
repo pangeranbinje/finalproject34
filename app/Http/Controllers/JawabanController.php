@@ -59,7 +59,9 @@ class JawabanController extends Controller
      */
     public function show($id)
     {
-        //
+        // $show = Pertanyaan::find($id);
+        // dd($id);
+        return view('layouts.answer');
     }
 
     /**
