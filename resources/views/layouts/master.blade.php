@@ -17,7 +17,7 @@
 
   <!-- Custom styles for this template-->
   <link href="{{ asset('BStemplate/css/sb-admin-2.min.css') }}" rel="stylesheet">
-
+  @stack('script-head')
 </head>
 
 <body id="page-top">
@@ -114,6 +114,7 @@
   <script src="{{ asset('BStemplate/js/demo/chart-area-demo.js') }}"></script>
   <script src="{{ asset('BStemplate/js/demo/chart-pie-demo.js') }}"></script>
 
+  @stack('scripts')
 </body>
 
 </html>

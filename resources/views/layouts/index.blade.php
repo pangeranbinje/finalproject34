@@ -31,7 +31,7 @@
   </div>
   <!-- Card Body -->
   <div class="card-body">
-    {{ $pst->isi }}
+    {!! $pst->isi !!}
   </div>
   <div class="card-body">
     Belom Ada Jawaban

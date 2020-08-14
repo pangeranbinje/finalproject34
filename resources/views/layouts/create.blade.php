@@ -1,5 +1,10 @@
 @extends('layouts.master')
 
+
+@push('script-head')
+<script src="//cdn.tinymce.com/4/tinymce.min.js"></script>    
+@endpush
+
 @section('content')
 <body class="bg-gradient-primary">
 
@@ -7,9 +12,7 @@
 
     <!-- Outer Row -->
     <div class="row justify-content-center">
-
       <div class="col-xl-10 col-lg-12 col-md-9">
-
         <div class="card o-hidden border-0 shadow-lg my-5">
           <div class="card-body p-0">
             <!-- Nested Row within Card Body -->
@@ -22,13 +25,13 @@
                   </div>
 
                   <form class="user" method="POST" action="/index/create">
-                   @csrf
+                   @csrf   
+                   <div class="form-group">
+                    <input type="text" class="form-control form-control-user" name="judul" id="judul" placeholder="Masukkan Juduul">
+                  </div>    
                     <div class="form-group">
-                      <input type="text" class="form-control form-control-user" name="judul" value="" id="judul" placeholder="Masukkan Judul" autocomplete="off">
-                    </div>
-                    <div class="form-group">
-                      <input type="text" class="form-control form-control-user" name="isi" value="" id="isi" placeholder="Masukkan Pertanyaan" autocomplete="off">
-                    </div>
+                      <textarea name="isi" class="form-control my-editor" placeholder="Masukkan Pertanyaan">{!! old('content', $content ?? '') !!}</textarea>
+                    </div>      
                     <button class="btn btn-primary btn-user btn-block">
                       Submit
                     </button>
@@ -53,8 +56,44 @@
   <!-- Custom scripts for all pages-->
   <script src="{{ asset('BStemplate/js/sb-admin-2.min.js') }}"></script>
 
-
-
-
 </body>
 @endsection
+
+@push('scripts')
+<script>
+  var editor_config = {
+    path_absolute : "/",
+    selector: "textarea.my-editor",
+    plugins: [
+      "advlist autolink lists link image charmap print preview hr anchor pagebreak",
+      "searchreplace wordcount visualblocks visualchars code fullscreen",
+      "insertdatetime media nonbreaking save table contextmenu directionality",
+      "emoticons template paste textcolor colorpicker textpattern"
+    ],
+    toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image media",
+    relative_urls: false,
+    file_browser_callback : function(field_name, url, type, win) {
+      var x = window.innerWidth || document.documentElement.clientWidth || document.getElementsByTagName('body')[0].clientWidth;
+      var y = window.innerHeight|| document.documentElement.clientHeight|| document.getElementsByTagName('body')[0].clientHeight;
+
+      var cmsURL = editor_config.path_absolute + 'laravel-filemanager?field_name=' + field_name;
+      if (type == 'image') {
+        cmsURL = cmsURL + "&type=Images";
+      } else {
+        cmsURL = cmsURL + "&type=Files";
+      }
+
+      tinyMCE.activeEditor.windowManager.open({
+        file : cmsURL,
+        title : 'Filemanager',
+        width : x * 0.8,
+        height : y * 0.8,
+        resizable : "yes",
+        close_previous : "no"
+      });
+    }
+  };
+
+  tinymce.init(editor_config);
+</script>
+@endpush
