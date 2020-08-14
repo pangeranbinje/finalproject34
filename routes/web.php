@@ -12,18 +12,22 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('layouts/index');
 });
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-
+//route::get('/index', 'JawabanController@index');
 route::get('/index', 'PertanyaanController@index');
+
 route::get('/index/create', 'PertanyaanController@create');
 route::post('/index/create', 'PertanyaanController@store');
 route::get('/profile', 'PertanyaanController@profile');
+route::get('/test', 'PertanyaanController@test');
+route::get('/index/{id}/answer', 'PertanyaanController@answer');
+route::post('/index/jawab', 'JawabanController@jawab');
 
 
 

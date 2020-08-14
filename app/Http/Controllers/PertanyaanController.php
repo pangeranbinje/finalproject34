@@ -6,8 +6,18 @@ use App\Pertanyaan;
 
 use Illuminate\Http\Request;
 
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
+
+use Illuminate\Support\Facades\Auth;
+
 class PertanyaanController extends Controller
 {
+
+    public function test(){
+        $post = Pertanyaan::all();
+        //dd($post);
+        return view('layouts.test', compact('post'));
+    }
 
     public function profile(){
         return view('layouts.profile');
@@ -22,6 +32,7 @@ class PertanyaanController extends Controller
         $post = Pertanyaan::all();
         return view('layouts.index', compact('post'));
     }
+
 
     /**
      * Show the form for creating a new resource.
@@ -41,8 +52,14 @@ class PertanyaanController extends Controller
      */
     public function store(Request $request)
     {
-        Pertanyaan::create($request->all());
-        return redirect('/index');
+        $idk = Auth::user()->id;
+        $post = Pertanyaan::create([
+            "judul" => $request["judul"],
+            "isi" => $request["isi"],
+            "user_id" => $idk
+        ]);
+
+        return redirect('index');
     }
 
     /**
@@ -51,9 +68,13 @@ class PertanyaanController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function answer($id)
     {
-        //
+        $tampil = Pertanyaan::find($id);
+
+        //dd($tampil);
+
+        return view('layouts.answer', compact('tampil'));
     }
 
     /**
@@ -62,10 +83,9 @@ class PertanyaanController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
-    {
-        //
-    }
+    
+  
+
 
     /**
      * Update the specified resource in storage.
