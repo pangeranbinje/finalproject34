@@ -24,6 +24,9 @@ route::get('/index', 'PertanyaanController@index');
 route::get('/index/create', 'PertanyaanController@create');
 route::post('/index/create', 'PertanyaanController@store');
 route::get('/profile', 'PertanyaanController@profile');
+route::get('/index/{id}/answer', 'JawabanController@show');
+route::post('/index/answer', 'JawabanController@store');
+
 
 
 

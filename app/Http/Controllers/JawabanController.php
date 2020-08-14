@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use app\Pertanyaan;
+use app\Jawaban;
 use Illuminate\Http\Request;
 
 class JawabanController extends Controller
@@ -23,7 +25,7 @@ class JawabanController extends Controller
      */
     public function create()
     {
-        return view('layouts.create')
+        //
     }
 
     /**
@@ -34,7 +36,8 @@ class JawabanController extends Controller
      */
     public function store(Request $request)
     {
-       //
+        Jawaban::create($request->all());
+        return redirect('/index');
     }
 
     /**
@@ -45,7 +48,9 @@ class JawabanController extends Controller
      */
     public function show($id)
     {
-        //
+        // $show = Pertanyaan::find($id);
+        // dd($id);
+        return view('layouts.answer');
     }
 
     /**

@@ -24,7 +24,7 @@
       <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink" style="">
         <a class="dropdown-item" href="#">UpVote(Autentikasi)</a>
         <a class="dropdown-item" href="#">DownVote(Autentikasi)</a>
-        <a class="dropdown-item" href="#">Jawaban(Autentikasi)</a>
+        <a class="dropdown-item" href="/index/{{ $pst->id }}/answer">Jawaban(Autentikasi)</a>
         <a class="dropdown-item" href="#">Komentar(Autentikasi)</a>
       </div>
     </div>
