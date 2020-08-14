@@ -8,6 +8,10 @@ use Illuminate\Http\Request;
 
 class PertanyaanController extends Controller
 {
+
+    public function profile(){
+        return view('layouts.profile');
+    }
     /**
      * Display a listing of the resource.
      *
