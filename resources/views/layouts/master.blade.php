@@ -17,7 +17,7 @@
 
   <!-- Custom styles for this template-->
   <link href="{{ asset('BStemplate/css/sb-admin-2.min.css') }}" rel="stylesheet">
-
+  @stack('script-head')
 </head>
 
 <body id="page-top">
@@ -46,7 +46,7 @@
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
           </div>
-
+          @yield('content')
           <!-- Content Row -->
           <!-- Content Row -->
           <!-- Content Row -->
@@ -54,7 +54,8 @@
         <!-- /.container-fluid -->
 
       </div>
-      @yield('content')
+
+      
       <!-- End of Main Content -->
 
       <!-- Footer -->
@@ -113,6 +114,7 @@
   <script src="{{ asset('BStemplate/js/demo/chart-area-demo.js') }}"></script>
   <script src="{{ asset('BStemplate/js/demo/chart-pie-demo.js') }}"></script>
 
+  @stack('scripts')
 </body>
 
 </html>
