@@ -33,7 +33,24 @@
                     <div class="form-group">
                     <label for="isi"></label>
                       <textarea name="isi" class="form-control my-editor" placeholder="Masukkan Pertanyaan">{!! old('content', $content ?? '') !!}</textarea>
+<<<<<<< HEAD
                     </div> 
+=======
+                    </div>
+                    <div class="form-group" style="">
+                    <label>Tag #</label>
+                    <input style="" name="tag" id="tag" type="text" value="" data-role="tagsinput" placeholder="Masukkan Tag Disini">
+                    <!-- <input class="form-control" name="tag" data-role="tagsinput" type="text"> -->
+                    <p style="background: #eee;
+                       padding: 10px;
+                       border: 1px solid #ccc;
+                       font-size: 12px;
+                       " class="help-block">Gunakan tombol enter, koma, atau spasi untuk membuat tag baru, untuk menghapus gunakan backspace</p>
+                    </div>      
+                    <button class="btn btn-primary btn-user btn-block">
+                      Submit
+                    </button>
+>>>>>>> f26d2646cff5cae0c711626f3f774e3b4316af69
                   </form>
 
                 </div>

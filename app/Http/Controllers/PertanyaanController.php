@@ -7,22 +7,37 @@ use Auth;
 
 use Illuminate\Http\Request;
 
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
+
+// use Illuminate\Support\Facades\Auth;
+
 class PertanyaanController extends Controller
 {
+
+    public function test(){
+        $post = Pertanyaan::all();
+        //dd($post);
+        return view('layouts.test', compact('post'));
+    }
+
+    public function profile(){
+        return view('layouts.profile');
+    }
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function __construct(){
-        $this->middleware('auth');
-    }
+        $this->middleware('auth') -> except(['index']);
+        }
     
     public function index()
     {
         $post = Pertanyaan::all();
         return view('layouts.index', compact('post'));
     }
+
 
     /**
      * Show the form for creating a new resource.
@@ -31,7 +46,8 @@ class PertanyaanController extends Controller
      */
     public function create()
     {
-        return view('layouts.create');
+        
+        return view('layouts.index');
     }
 
     /**
@@ -43,8 +59,20 @@ class PertanyaanController extends Controller
     public function store(Request $request)
     {
         
-        Pertanyaan::create($request->all());
-        return redirect('/index');
+        // Pertanyaan::create($request->all());
+        // return redirect('/index');
+        // $idk = Auth::user()->id;
+        // $post = Pertanyaan::create([
+        //     "judul" => $request["judul"],
+        //     "isi" => $request["isi"],
+        //     "user_id" => $idk
+        // ]);
+        $pst = pertanyaan::create([
+            'judul' => $request['judul'],
+            'isi' => $request['isi']
+            ]);
+
+        return redirect('index');
     }
 
     /**
@@ -53,9 +81,13 @@ class PertanyaanController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function answer($id)
     {
-        //
+        $tampil = Pertanyaan::find($id);
+
+        //dd($tampil);
+
+        return view('layouts.answer', compact('tampil'));
     }
 
     /**
@@ -64,10 +96,9 @@ class PertanyaanController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
-    {
-        //
-    }
+    
+  
+
 
     /**
      * Update the specified resource in storage.

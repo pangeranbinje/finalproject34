@@ -2,7 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Jawaban;
+
 use Illuminate\Http\Request;
+
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
+
+use Illuminate\Support\Facades\Auth;
 
 class JawabanController extends Controller
 {
@@ -13,7 +19,8 @@ class JawabanController extends Controller
      */
     public function index()
     {
-        return view('layouts.index');
+        $jwb = Jawaban::all();
+        return view('layouts.index', compact('jwb'));
     }
 
     /**
@@ -32,10 +39,17 @@ class JawabanController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function jawab(Request $request)
     {
-       //
-    }
+       $idj = Auth::user()->id;
+       $post = Jawaban::create([
+           "jawaban" => $request["jawaban"],
+           "user_id" => $idj
+       ]);
+
+       return redirect('index');
+   }
+
 
     /**
      * Display the specified resource.
@@ -45,7 +59,9 @@ class JawabanController extends Controller
      */
     public function show($id)
     {
-        //
+        // $show = Pertanyaan::find($id);
+        // dd($id);
+        return view('layouts.answer');
     }
 
     /**

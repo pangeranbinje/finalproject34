@@ -26,7 +26,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/index';
 
     /**
      * Create a new controller instance.
@@ -57,6 +57,7 @@ class LoginController extends Controller
         //dd($input);
 
         if(auth()->attempt($input))
+        
         {
             return redirect()->route('home');
         }else{
