@@ -19,13 +19,14 @@ use App\Http\Resources\UserCollection;
 class PertanyaanController extends Controller
 {
 
-    public function test(){
-        $post = Pertanyaan::all();
-        //dd($post);
+    public function test()
+    {
+        $post = Pertanyaan::all()->orderBy('created_at', 'desc');
         return view('layouts.test', compact('post'));
     }
 
-    public function profile(){
+    public function profile()
+    {
         return view('layouts.profile');
     }
     /**
@@ -90,8 +91,8 @@ class PertanyaanController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    
-  
+
+
 
 
     /**
