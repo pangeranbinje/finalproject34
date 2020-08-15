@@ -33,9 +33,6 @@
                     <div class="form-group">
                     <label for="isi"></label>
                       <textarea name="isi" class="form-control my-editor" placeholder="Masukkan Pertanyaan">{!! old('content', $content ?? '') !!}</textarea>
-<<<<<<< HEAD
-                    </div> 
-=======
                     </div>
                     <div class="form-group" style="">
                     <label>Tag #</label>
@@ -50,7 +47,6 @@
                     <button class="btn btn-primary btn-user btn-block">
                       Submit
                     </button>
->>>>>>> f26d2646cff5cae0c711626f3f774e3b4316af69
                   </form>
 
                 </div>

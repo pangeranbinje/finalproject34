@@ -9,18 +9,13 @@
 </div>
 <div>
 <div class="mt-3">
-<<<<<<< HEAD
-
-@foreach ($post ?? '' as $pst)
-=======
 @foreach ($post as $pst)
->>>>>>> 660cedfde8e87a0d463c81cf6d2c7dccc60c5943
 <div class="card card-widget">
               <div class="card-header">
                 <div class="user-block" >
                   <img class="img-circle" src="../dist/img/user1-128x128.jpg" alt="User Image">
-                  <div class="judul"><h4><a href="#">&nbsp;{{ $pertanyaan->judul }}</a></h4></div>
-                  <span class="description">{{ $pertanyaan->created_at }}</span>
+                  <div class="judul"><h4><a href="#">&nbsp;{{ $pst->judul }}</a></h4></div>
+                  <span class="description">{{ $pst->created_at }}</span>
                   <span class="user"></span>
                   <div class="judul"><h4><a href="#">&nbsp;{{ $pst->judul }}</a></h4></div>
                   <span class="description">{{ $pst->created_at }}</span>

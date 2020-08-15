@@ -25,15 +25,6 @@ route::get('/index/create', 'PertanyaanController@create');
 route::post('/index/create', 'PertanyaanController@store');
 route::get('/profile', 'PertanyaanController@profile');
 route::get('/test', 'PertanyaanController@test');
-<<<<<<< HEAD
-route::get('/index/{id}/answer', 'PertanyaanController@answer');
-route::post('/index/jawab', 'JawabanController@jawab');
-route::get('/index/{id}/answer', 'JawabanController@show');
-route::post('/index/answer', 'JawabanController@store');
-
-
-=======
->>>>>>> 660cedfde8e87a0d463c81cf6d2c7dccc60c5943
 route::get('/index/{id}/answer', 'PertanyaanController@answer');
 route::post('/index/jawab', 'JawabanController@jawab');
 

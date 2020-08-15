@@ -22,7 +22,7 @@ class PertanyaanController extends Controller
 
     public function test()
     {
-        $post = Pertanyaan::all()->orderBy('created_at', 'desc');
+        $post = Pertanyaan::orderBy('created_at', 'ASC')->paginate(4);
         return view('layouts.test', compact('post'));
     }
 
@@ -35,13 +35,14 @@ class PertanyaanController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function __construct(){
-        $this->middleware('auth') -> except(['index']);
-        }
-    
+    public function __construct()
+    {
+        $this->middleware('auth')->except(['index']);
+    }
+
     public function index()
     {
-        $post = Pertanyaan::paginate(4);
+        $post = Pertanyaan::orderBy('created_at', 'DESC')->paginate(4);
         return view('layouts.index', compact('post'));
     }
 
@@ -53,7 +54,7 @@ class PertanyaanController extends Controller
      */
     public function create()
     {
-        
+
         return view('layouts.index');
     }
 
@@ -65,21 +66,6 @@ class PertanyaanController extends Controller
      */
     public function store(Request $request)
     {
-<<<<<<< HEAD
-        
-        // Pertanyaan::create($request->all());
-        // return redirect('/index');
-        // $idk = Auth::user()->id;
-        // $post = Pertanyaan::create([
-        //     "judul" => $request["judul"],
-        //     "isi" => $request["isi"],
-        //     "user_id" => $idk
-        // ]);
-        $pst = pertanyaan::create([
-            'judul' => $request['judul'],
-            'isi' => $request['isi']
-            ]);
-=======
         $idk = Auth::user()->id;
         //dd($idk);
         $post = Pertanyaan::create([
@@ -87,7 +73,6 @@ class PertanyaanController extends Controller
             "isi" => $request["isi"],
             "user_id" => $idk
         ]);
->>>>>>> 660cedfde8e87a0d463c81cf6d2c7dccc60c5943
 
         return redirect('index');
     }
