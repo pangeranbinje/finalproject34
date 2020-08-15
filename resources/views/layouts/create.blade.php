@@ -27,9 +27,11 @@
                   <form class="user" method="POST" action="/index/create">
                    @csrf   
                    <div class="form-group">
-                    <input type="text" class="form-control form-control-user" name="judul" id="judul" placeholder="Masukkan Juduul">
-                  </div>    
+                   <label for="judul"></label>
+                    <input type="text" class="form-control form-control-user" name="judul" id="judul" placeholder="Masukkan Judul">
+                   </div>    
                     <div class="form-group">
+                    <label for="isi"></label>
                       <textarea name="isi" class="form-control my-editor" placeholder="Masukkan Pertanyaan">{!! old('content', $content ?? '') !!}</textarea>
                     </div>
                     <div class="form-group" style="">

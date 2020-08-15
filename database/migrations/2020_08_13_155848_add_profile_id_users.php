@@ -27,7 +27,7 @@ class AddProfileIdUsers extends Migration
      */
     public function down()
     {
-        Schema::table('pertanyaan', function (Blueprint $table) {
+        Schema::table('users', function (Blueprint $table) {
             $table->dropForeign(['profile_id']);
             $table->dropColumn(['profile_id']);
 

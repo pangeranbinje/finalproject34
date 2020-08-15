@@ -16,6 +16,9 @@
                   <img class="img-circle" src="../dist/img/user1-128x128.jpg" alt="User Image">
                   <div class="judul"><h4><a href="#">&nbsp;{{ $pst->judul }}</a></h4></div>
                   <span class="description">{{ $pst->created_at }}</span>
+                  <span class="user"></span>
+                  <div class="judul"><h4><a href="#">&nbsp;{{ $pst->judul }}</a></h4></div>
+                  <span class="description">{{ $pst->created_at }}</span>
                   <span class="user">   {!! $pst->isi !!}</span>
                 </div>
                 <!-- /.user-block -->

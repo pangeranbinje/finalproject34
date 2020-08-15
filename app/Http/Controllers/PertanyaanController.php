@@ -3,12 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Pertanyaan;
+use Auth;
 
 use Illuminate\Http\Request;
 
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
-use Illuminate\Support\Facades\Auth;
+// use Illuminate\Support\Facades\Auth;
 
 use Illuminate\Pagination\Paginator;
 
@@ -21,7 +22,7 @@ class PertanyaanController extends Controller
 
     public function test()
     {
-        $post = Pertanyaan::all()->orderBy('created_at', 'desc');
+        $post = Pertanyaan::orderBy('created_at', 'ASC')->paginate(4);
         return view('layouts.test', compact('post'));
     }
 
@@ -34,10 +35,19 @@ class PertanyaanController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this->middleware('auth')->except(['index']);
+    }
+
     public function index()
     {
+<<<<<<< HEAD
         $post = Pertanyaan::paginate(4);
         //dd($post);
+=======
+        $post = Pertanyaan::orderBy('created_at', 'DESC')->paginate(4);
+>>>>>>> bcde91bae027250a7328156449952aa0dc0e592b
         return view('layouts.index', compact('post'));
     }
 
@@ -49,7 +59,8 @@ class PertanyaanController extends Controller
      */
     public function create()
     {
-        return view('layouts.create');
+
+        return view('layouts.index');
     }
 
     /**
