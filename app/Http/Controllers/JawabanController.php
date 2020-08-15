@@ -44,7 +44,9 @@ class JawabanController extends Controller
         $idl = Auth::user()->id;
         $post = Jawaban::create([
             "jawaban" => $request["jawaban"],
-            "user_id" => $idl
+            "user_id" => $idl,
+            "like" => "0",
+
         ]);
 
         return redirect('index');

@@ -22,7 +22,7 @@ class PertanyaanController extends Controller
 
     public function test()
     {
-        $post = Pertanyaan::orderBy('created_at', 'ASC')->paginate(4);
+        $post = Pertanyaan::all();
         return view('layouts.test', compact('post'));
     }
 
@@ -42,12 +42,8 @@ class PertanyaanController extends Controller
 
     public function index()
     {
-<<<<<<< HEAD
         $post = Pertanyaan::paginate(4);
         //dd($post);
-=======
-        $post = Pertanyaan::orderBy('created_at', 'DESC')->paginate(4);
->>>>>>> bcde91bae027250a7328156449952aa0dc0e592b
         return view('layouts.index', compact('post'));
     }
 

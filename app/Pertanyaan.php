@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Pertanyaan extends Model
 {
-    protected $fillable = ['isi', 'judul',];
+    protected $fillable = ['isi', 'judul','like'];
     protected $table = 'pertanyaans';
     
     

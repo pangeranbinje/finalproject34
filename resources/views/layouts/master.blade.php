@@ -108,6 +108,11 @@
     </div>
   </div>
 
+  <!-- jQuery -->
+  <script src="../../plugins/jquery/jquery.min.js"></script>
+  <!-- Bootstrap 4 -->
+  <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+
   <!-- Bootstrap core JavaScript-->
   <script src="{{ asset('BStemplate/vendor/jquery/jquery.min.js') }}"></script>
   <script src="{{ asset('BStemplate/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
