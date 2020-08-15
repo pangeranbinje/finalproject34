@@ -11,7 +11,7 @@
 |
 */
 Route::get('/', function () {
-    return view('layouts/index');
+    return view('auth/login');
 });
 
 Auth::routes();
@@ -26,7 +26,7 @@ route::post('/index/create', 'PertanyaanController@store');
 route::get('/profile', 'PertanyaanController@profile');
 route::get('/test', 'PertanyaanController@test');
 route::get('/index/{id}/answer', 'PertanyaanController@answer');
-route::post('/index/jawab', 'JawabanController@jawab');
+route::post('/index/answer', 'JawabanController@jawab');
 
 
 

@@ -39,11 +39,12 @@ class JawabanController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function jawab(Request $request)
     {
-
+        $idl = Auth::user()->id;
         $post = Jawaban::create([
             "jawaban" => $request["jawaban"],
+            "user_id" => $idl
         ]);
 
         return redirect('index');

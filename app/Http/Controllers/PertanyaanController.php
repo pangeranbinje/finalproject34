@@ -37,6 +37,7 @@ class PertanyaanController extends Controller
     public function index()
     {
         $post = Pertanyaan::paginate(4);
+        //dd($post);
         return view('layouts.index', compact('post'));
     }
 
