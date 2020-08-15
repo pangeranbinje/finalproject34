@@ -10,7 +10,6 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::get('/', function () {
     return view('layouts/index');
 });
@@ -25,15 +24,8 @@ route::get('/index', 'PertanyaanController@index');
 route::get('/index/create', 'PertanyaanController@create');
 route::post('/index/create', 'PertanyaanController@store');
 route::get('/profile', 'PertanyaanController@profile');
-<<<<<<< HEAD
-route::get('/test', 'PertanyaanController@test');
 route::get('/index/{id}/answer', 'PertanyaanController@answer');
-route::post('/index/jawab', 'JawabanController@jawab');
-=======
-route::get('/index/{id}/answer', 'JawabanController@show');
 route::post('/index/answer', 'JawabanController@store');
-
->>>>>>> 8fbc53f210dc9a5b2870f4387b75529976921100
 
 
 
