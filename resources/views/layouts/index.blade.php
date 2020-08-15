@@ -7,8 +7,8 @@
   <span class="text">Create Your Question</span>
 </a>
 </div>
+<div>
 <div class="mt-3">
-
 @foreach ($post as $pst)
 <div class="card card-widget">
               <div class="card-header">
@@ -72,6 +72,8 @@
               <!-- /.card-footer -->
             </div>
 @endforeach
+{{ $post->links() }}
+</div>
 
 </div>
 @endsection
