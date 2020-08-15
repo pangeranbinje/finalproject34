@@ -16,6 +16,7 @@ class CreateJawabansTable extends Migration
         Schema::create('jawabans', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('jawaban');
+            $table->integer('like');
             $table->timestamps();
 
             $table->unsignedBigInteger('user_id')->nullable();

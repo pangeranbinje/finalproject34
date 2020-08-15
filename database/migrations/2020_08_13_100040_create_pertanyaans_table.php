@@ -17,6 +17,7 @@ class CreatePertanyaansTable extends Migration
             $table->bigIncrements('id');
             $table->string('judul');
             $table->longtext('isi');
+            $table->integer('like');
             $table->timestamps();
 
             $table->unsignedBigInteger('user_id')->nullable();

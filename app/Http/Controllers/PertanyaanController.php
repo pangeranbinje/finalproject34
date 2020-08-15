@@ -11,6 +11,12 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 // use Illuminate\Support\Facades\Auth;
 
+use Illuminate\Pagination\Paginator;
+
+use Illuminate\Pagination\LengthAwarePaginator;
+
+use App\Http\Resources\UserCollection;
+
 class PertanyaanController extends Controller
 {
 
@@ -35,7 +41,7 @@ class PertanyaanController extends Controller
     
     public function index()
     {
-        $post = Pertanyaan::all();
+        $post = Pertanyaan::paginate(4);
         return view('layouts.index', compact('post'));
     }
 
@@ -59,6 +65,7 @@ class PertanyaanController extends Controller
      */
     public function store(Request $request)
     {
+<<<<<<< HEAD
         
         // Pertanyaan::create($request->all());
         // return redirect('/index');
@@ -72,6 +79,15 @@ class PertanyaanController extends Controller
             'judul' => $request['judul'],
             'isi' => $request['isi']
             ]);
+=======
+        $idk = Auth::user()->id;
+        //dd($idk);
+        $post = Pertanyaan::create([
+            "judul" => $request["judul"],
+            "isi" => $request["isi"],
+            "user_id" => $idk
+        ]);
+>>>>>>> 660cedfde8e87a0d463c81cf6d2c7dccc60c5943
 
         return redirect('index');
     }
