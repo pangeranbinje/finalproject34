@@ -17,18 +17,15 @@
                   <div class="judul"><h4><a href="#">&nbsp;{{ $pertanyaan->judul }}</a></h4></div>
                   <span class="description">{{ $pertanyaan->created_at }}</span>
                   <span class="user"></span>
+                  <div class="judul"><h4><a href="#">&nbsp;{{ $pst->judul }}</a></h4></div>
+                  <span class="description">{{ $pst->created_at }}</span>
+                  <span class="user">   {!! $pst->isi !!}</span>
                 </div>
                 <!-- /.user-block -->
                 <!-- /.card-tools -->
               </div>
               <!-- /.card-header -->
               <div class="card-body">
-                <!-- post text -->
-                {!! $pst->isi !!}
-                <!-- Attachment -->
-                
-                <!-- /.attachment-block -->
-
                 <!-- Social sharing buttons -->
                 <a href="/index/{{$pst->id}}/answer" class="btn btn-default btn-sm"><i class="fas fa-share"></i> Answer </a>
                 <button type="button" class="btn btn-default btn-sm"><i class="far fa-thumbs-up"></i> vote</button>
@@ -45,8 +42,8 @@
                       Maria Gonzales
                       <span class="text-muted float-right">8:03 PM Today</span>
                     </span><!-- /.username -->
-                    It is a long established fact that a reader will be distracted
-                    by the readable content of a page when looking at its layout.
+            belom dipasang comment 
+
                   </div>
                   <!-- /.comment-text -->
                 </div>
@@ -60,9 +57,7 @@
                       Nora Havisham
                       <span class="text-muted float-right">8:03 PM Today</span>
                     </span><!-- /.username -->
-                    The point of using Lorem Ipsum is that it hrs a morer-less
-                    normal distribution of letters, as opposed to using
-                    'Content here, content here', making it look like readable English.
+                    belom dipasang comment
                   </div>
                   <!-- /.comment-text -->
                 </div>

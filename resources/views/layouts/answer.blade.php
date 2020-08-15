@@ -21,17 +21,14 @@
               <div class="card-body">
                 <!-- post text -->
                 {!! $tampil->isi !!}
-                <!-- Attachment -->
-                
-                <!-- /.attachment-block -->
-
-                
+                <!-- Attachment -->            
+                <!-- /.attachment-block --> 
               </div>
               <!-- /.card-footer -->
               <!-- /.card-footer -->
             </div>
             <div>
-            <form class="user" method="POST" action="/index/jawab">
+            <form class="user" method="POST" action="/index/answer">
                    @csrf   
                     <div class="form-group">
                       <textarea name="jawaban" class="form-control my-editor" placeholder="jawaban"></textarea>
